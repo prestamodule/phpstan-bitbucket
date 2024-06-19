@@ -30,23 +30,31 @@ class BitbucketErrorFormatter implements ErrorFormatter
 
         $reportUuid = $this->apiClient->createReport(self::REPORT_TITLE, $analysisResult->getTotalErrorsCount());
 
+        $fileSpecificErrors = [];
         foreach ($analysisResult->getFileSpecificErrors() as $error) {
-            $this->apiClient->addAnnotation(
-                $reportUuid,
-                $error->getMessage(),
-                $error->getFile(),
-                $error->getLine()
-            );
+            $fileSpecificErrors[] = [
+                'summary' => $error->getMessage(),
+                'path' => $error->getFile(),
+                'line' => $error->getLine(),
+            ];
         }
 
+        $this->apiClient->addAnnotationsBulk(
+            $reportUuid,
+            $fileSpecificErrors
+        );
+
+        $notFileSpecificErrors = [];
         foreach ($analysisResult->getNotFileSpecificErrors() as $error) {
-            $this->apiClient->addAnnotation(
-                $reportUuid,
-                $error,
-                null,
-                null
-            );
+            $notFileSpecificErrors[] = [
+                'summary' => $error,
+            ];
         }
+
+        $this->apiClient->addAnnotationsBulk(
+            $reportUuid,
+            $notFileSpecificErrors
+        );
 
         return (int) $analysisResult->hasErrors();
     }
