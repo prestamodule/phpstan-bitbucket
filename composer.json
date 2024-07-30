@@ -12,8 +12,7 @@
     ],
     "homepage": "https://github.com/swisnl/phpstan-bitbucket",
     "license": "MIT",
-    "authors": [
-        {
+    "authors": [{
             "name": "Alexander Timmermann",
             "email": "alex@timmermann.me"
         },
@@ -25,7 +24,7 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^8.0",
         "phpstan/phpstan": "^1.0",
         "swisnl/bitbucket-reports": "dev-main"
     },
