@@ -14,9 +14,9 @@ class BitbucketErrorFormatter implements ErrorFormatter
 {
     private const REPORT_TITLE = 'PHPStan';
 
-    private TableErrorFormatter $tableErrorFormatter;
+    private $tableErrorFormatter;
 
-    private BitbucketApiClient $apiClient;
+    private $apiClient;
 
     public function __construct(TableErrorFormatter $tableErrorFormatter)
     {
