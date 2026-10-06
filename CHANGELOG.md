@@ -6,21 +6,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) princi
 
 ## [Unreleased]
 
-### Added
-
-- Support PHPStan 2.x alongside PHPStan 1.x, synchronized from upstream 0.4.0.
-- Document runtime requirements and registration of both PrestaModule forks.
-
-### Retained
-
-- PHP 7.2 compatibility for PHPStan 1.x and bulk annotation delivery through the reports fork.
-
-
-## [0.4.0] - 2025-01-31
-
-### Added
-
-- Added support for PHPStan 2 [#1](https://github.com/swisnl/phpstan-bitbucket/pull/1).
+_ Nothing.
 
 
 ## [0.3.0] - 2023-12-22
