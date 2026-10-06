@@ -25,7 +25,7 @@
     ],
     "require": {
         "php": "^7.2|^8.0",
-        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan": "^1.0 || ^2.0",
         "swisnl/bitbucket-reports": "dev-main"
     },
     "autoload": {
